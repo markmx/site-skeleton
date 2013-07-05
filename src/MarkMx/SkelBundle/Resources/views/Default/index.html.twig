@@ -1,0 +1,40 @@
+{% extends "MarkMxSkelBundle::layout.html.twig" %}
+
+{% block title "Symfony - Demos" %}
+
+{% block content_header '' %}
+
+{% block content %}
+    <h1 class="title">Welcome to the Site Skeleton for Symfony</h1>
+    {% if is_granted("ROLE_USER") %}
+    <p>
+        Hi {{ app.user.username }}.
+    </p>
+
+    <p>
+        Click <a href="{{ path('_default_hello', {'name':  app.user.username }) }}">here</a> to say hello based on your name in the link.
+    </p>
+    <p>
+        Profile: <a href="{{ path('fos_user_profile_show') }}">view</a>,
+        <a href="{{ path('fos_user_profile_edit') }}">edit</a>,
+        <a href="{{ path('fos_user_change_password') }}">change password</a>
+        or <a href="{{ path('fos_user_resetting_request') }}">reset password</a>
+    </p>
+    {% endif %}
+
+    {% if not is_granted("ROLE_USER") %}
+    <p>
+        Click <a href="{{ path('_default_hello', {'name': 'Guest'}) }}">here</a> to say hello based on your name in the link.
+    </p>
+    <p>
+        Please <a href="{{ path('fos_user_registration_register') }}">register</a> a new account, or <a href="{{ path('fos_user_security_login') }}">login</a> to an existing account.
+        {% endif %}
+        {% if is_granted("ROLE_USER") %}
+        If finished, <a href="{{ path('fos_user_security_logout') }}">logout.</a>
+    </p>
+    {% endif %}
+
+    <p>
+        View this site's code on <a href="https://github.com/markmx/site-skeleton">Github</a>.
+    </p>
+{% endblock %}

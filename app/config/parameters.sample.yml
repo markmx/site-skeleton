@@ -1,0 +1,18 @@
+parameters:
+    database_driver:   pdo_mysql
+    database_host:     127.0.0.1
+    database_port:     ~
+    database_name:     foobar
+    database_user:     username
+    database_password: password
+
+    mailer_transport:  smtp
+    mailer_host:       smtp.foobar.com
+    mailer_user:       sender@foobar.com
+    mailer_password:   ~
+    mailer_port:       465
+    reply_to_address:  noreply@foobar.com
+    delivery_address:  dev@foobar.com
+
+    locale:            en
+    secret:            ThisTokenIsNotSoSecretChangeIt

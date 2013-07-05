@@ -1,0 +1,12 @@
+{% extends "MarkMxSkelBundle::layout.html.twig" %}
+
+{% block title "Symfony - Test email" %}
+
+{% block content_header '' %}
+
+{% block content %}
+    <h1 class="title">Test email sent</h1>
+    <p>
+        This confirms the test email has been sent {{ app.user.username }}.
+    </p>
+{% endblock %}

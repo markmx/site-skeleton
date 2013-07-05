@@ -4,11 +4,11 @@ imports:
 
 framework:
     #esi:             ~
-    #translator:      { fallback: %locale% }
+    translator: ~
     secret:          %secret%
     router:
         resource: "%kernel.root_dir%/config/routing.yml"
-        strict_requirements: ~
+        strict_requirements: %kernel.debug%
     form:            ~
     csrf_protection: ~
     validation:      { enable_annotations: true }
@@ -58,8 +58,23 @@ doctrine:
 
 # Swiftmailer Configuration
 swiftmailer:
-    transport: %mailer_transport%
-    host:      %mailer_host%
-    username:  %mailer_user%
-    password:  %mailer_password%
-    spool:     { type: memory }
+    transport:      %mailer_transport%
+    host:           %mailer_host%
+    username:       %mailer_user%
+    password:       %mailer_password%
+    spool:          { type: memory }
+    port :          %mailer_port%
+    encryption:     ssl
+    auth_mode:      login
+    sender_address: %reply_to_address%
+
+fos_user:
+    db_driver: orm # other valid values are 'mongodb', 'couchdb' and 'propel'
+    firewall_name: main
+    user_class: MarkMx\UserBundle\Entity\User
+    registration:
+        confirmation:
+            enabled:    true
+    from_email:
+        address:        %reply_to_address%
+        sender_name:    Site Skeleton Demo App

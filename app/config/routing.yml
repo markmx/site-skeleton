@@ -1,0 +1,5 @@
+_hello_bundle:
+    resource: "@MarkMxSkelBundle/Resources/config/routing.yml"
+
+_user_bundle:
+    resource: "@MarkMxUserBundle/Resources/config/routing.yml"

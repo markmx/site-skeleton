@@ -1,14 +1,21 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
     <head>
-        <meta charset="UTF-8" />
         <title>{% block title %}Symfony2 Site Skeleton{% endblock %}</title>
-        {% block stylesheets %}{% endblock %}
+
+        {% block stylesheets %}
+            <link rel="stylesheet" href="{{ asset('css/bootstrap.css') }}">
+        {% endblock %}
+
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
     </head>
     <body>
-        <p><a href="{{ path('homepage') }}">Home</a>. Source code for this demo site at <a href="https://github.com/markmx/site-skeleton">Github</a></p>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="js/jquery.js"><\/script>');</script>
+    <script src="{{ asset('js/bootstrap.js') }}"></script>
         {% block body %}{% endblock %}
-        {% block javascripts %}{% endblock %}
+
+        {% block javascripts %}
+        {% endblock %}
     </body>
 </html>

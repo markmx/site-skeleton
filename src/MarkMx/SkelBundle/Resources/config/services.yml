@@ -1,0 +1,14 @@
+# src/MarkMx/SkelBundle/Resources/config/services.yml
+services:
+    markmx_main.menu_builder:
+        class: MarkMx\SkelBundle\Menu\MenuBuilder
+        arguments: ["@service_container"]
+
+    markmx_main.menu.main:
+        class: Knp\Menu\MenuItem # the service definition requires setting the class
+        factory_service: markmx_main.menu_builder
+        factory_method: createMainMenu
+        arguments: ["@request", "@knp_menu.factory"]
+        scope: request # needed as we have the request as a dependency here
+        tags:
+            - { name: knp_menu.menu, alias: main } # The alias is what is used to retrieve the menu

@@ -2,9 +2,9 @@ homepage:
     pattern:  /
     defaults: { _controller: MarkMxSkelBundle:Default:index }
 
-_default_hello:
-    pattern:  /hello/{name}
-    defaults: { _controller: MarkMxSkelBundle:Default:hello }
+about:
+    pattern:  /about
+    defaults: { _controller: MarkMxSkelBundle:Default:about }
 
 _email:
     pattern:  /email

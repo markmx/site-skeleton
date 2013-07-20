@@ -1,37 +1,37 @@
-{% extends "TwigBundle::layout.html.twig" %}
+{% extends "::base.html.twig" %}
 
 {% block head %}
+    {{ parent() }}
+
+    <meta http-equiv="Content-Type" content="text/html; charset={{ _charset }}" />
+    <meta charset="UTF-8" />
+    <meta name="robots" content="noindex,nofollow" />
     <link rel="icon" sizes="16x16" href="{{ asset('favicon.ico') }}" />
-    <link rel="stylesheet" href="{{ asset('bundles/markmxskel/css/demo.css') }}" />
 {% endblock %}
 
-{% block title 'Demo Bundle' %}
-
 {% block body %}
-    {% for flashMessage in app.session.flashbag.get('notice') %}
-        <div class="flash-message">
-            <em>Notice</em>: {{ flashMessage }}
+    <div class="container">
+        <div class="row">
+            <div class="span12">
+                <br/>
+                <div class="navbar">
+                  <div class="navbar-inner">
+                    <a class="brand" href="{{ path('homepage') }}">Site Skeleton</a>
+                    {{ knp_menu_render('main', {'nav_type': 'tabs'}) }}
+                  </div>
+                </div>
+            </div>
         </div>
-    {% endfor %}
-
-    {% block content_header %}
-        <ul id="menu">
-            {% block content_header_more %}
-                <li><a href="{{ path('homepage') }}">Demo Home</a></li>
-            {% endblock %}
-        </ul>
-
-        <div style="clear: both"></div>
-    {% endblock %}
-
-    <div class="block">
-        {% block content %}{% endblock %}
+        <div class="row">
+            <div class="span4">
+                <div class="hero-unit">
+                  <h3>Side panel</h3>
+                  <p>Advertising/page navigation usage.</p>
+                </div>
+            </div>
+            <div class="span8">
+                {% block content %}{% endblock %}
+            </div>
+        </div>
     </div>
-
-    {% if code is defined %}
-        <h2>Code behind this page</h2>
-        <div class="block">
-            <div class="symfony-content">{{ code|raw }}</div>
-        </div>
-    {% endif %}
 {% endblock %}

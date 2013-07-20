@@ -22,12 +22,12 @@ class DefaultController extends Controller
     }
 
     /**
-     * @Route("/hello/{name}", name="_default_hello")
+     * @Route("/about", name="about")
      * @Template()
      */
-    public function helloAction($name)
+    public function aboutAction()
     {
-        return array('name' => $name);
+        return array();
     }
 
     /**

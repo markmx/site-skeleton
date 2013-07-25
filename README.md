@@ -4,11 +4,12 @@ Symfony Site Skeleton
 A project offering an almost completely pre-configured working Symfony2 Web site, allowing you to focus
 immediately on developing your actual application.
 
-Comprises:
+Includes:
 
 * Symfony2
 * FOSUserBundle
-* BcBootstrapBundle (TODO)
+* BcBootstrapBundle (Twitter Bootstrap/Jquery)
+* KnpMenuBundle
 
 View the Site Skeleton in action on my [free hosting account](http://site-skeleton.eu1.frbit.net) (thanks to [fortrabbit](http://fortrabbit.com/) for providing it).
 

@@ -19,7 +19,7 @@ security:
         username: "Username:"
         password: "Password:"
         remember_me: Remember me
-        submit: Login
+        submit: Sign in
 
 # Profile
 profile:

@@ -29,9 +29,9 @@ class MenuBuilder
             $accountMenu->addChild('Edit profile', array('route' => 'fos_user_profile_edit'));
             $accountMenu->addChild('Change password', array('route' => 'fos_user_change_password'));
             
-            $menu->addChild('Logout', array('route' => 'fos_user_security_logout'));
+            $menu->addChild('Sign out', array('route' => 'fos_user_security_logout'));
         } else {
-            $menu->addChild('Login', array('route' => 'fos_user_security_login'));
+            $menu->addChild('Sign in', array('route' => 'fos_user_security_login'));
             $menu->addChild('Reset password', array('route' => 'fos_user_resetting_request'));
             $menu->addChild('Register', array('route' => 'fos_user_registration_register'));
         }

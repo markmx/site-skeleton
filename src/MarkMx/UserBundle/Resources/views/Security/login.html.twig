@@ -1,4 +1,7 @@
-{% extends "FOSUserBundle::layout.html.twig" %}
+{% extends "MarkMxSkelBundle::layout.html.twig" %}
+
+{% block content %}
+<h1>Login</h1>
 
 {% block fos_user_content %}
 {% if error %}
@@ -19,8 +22,8 @@
     </div>
 
     <div>
-        <input type="checkbox" id="remember_me" name="_remember_me" value="on" />
         <label for="remember_me">{{ 'security.login.remember_me'|trans({}, 'FOSUserBundle') }}</label>
+        <input type="checkbox" id="remember_me" name="_remember_me" value="on" />
     </div>
 
     <input type="submit" id="_submit" name="_submit" value="{{ 'security.login.submit'|trans({}, 'FOSUserBundle') }}" />
@@ -30,3 +33,5 @@
     Forgotten password? Request a <a href="{{ path('fos_user_resetting_request') }}">password reset</a>.
 </p>
 {% endblock fos_user_content %}
+
+{% endblock %}

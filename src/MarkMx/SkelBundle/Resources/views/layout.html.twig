@@ -26,10 +26,18 @@
             <div class="span4">
                 <div class="hero-unit">
                   <h3>Side panel</h3>
-                  <p>Advertising/page navigation usage.</p>
+                  <p>Advertising or navigation usage.</p>
                 </div>
             </div>
             <div class="span8">
+                {% for type, messages in app.session.flashbag.all() %}
+                    {% for message in messages %}
+                        <div class="flash-{{ type }}">
+                            {{ message }}
+                        </div>
+                    {% endfor %}
+                {% endfor %}
+
                 {% block content %}{% endblock %}
             </div>
         </div>

@@ -1,15 +1,11 @@
-{% extends "MarkMxSkelBundle::layout.html.twig" %}
-
-{% block content %}
-<h1>Check email</h1>
+{% extends "MarkMxUserBundle::layout.html.twig" %}
 
 {% block fos_user_content %}
+<h1>Check email</h1>
 
 {% trans_default_domain 'FOSUserBundle' %}
 
 <p>
 {{ 'resetting.check_email'|trans({'%email%': email}) }}
 </p>
-{% endblock %}
-
-{% endblock %}
+{% endblock fos_user_content %}

@@ -1,0 +1,14 @@
+# src/MarkMx/UserBundle/Resources/config/services.yml
+services:
+    markmx_user.registration.form.type:
+        class: MarkMx\UserBundle\Form\Type\RegistrationFormType
+        arguments: [%fos_user.model.user.class%]
+        tags:
+            - { name: form.type, alias: markmx_user_registration }
+
+    markmx_user.resetting.form.type:
+        class: MarkMx\UserBundle\Form\Type\ResettingFormType
+        arguments: [%fos_user.model.user.class%]
+        tags:
+            - { name: form.type, alias: markmx_user_resetting }
+

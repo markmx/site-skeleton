@@ -31,15 +31,15 @@ class MenuBuilder
             
             $menu->addChild('Sign out', array('route' => 'fos_user_security_logout'));
         } else {
+            $menu->addChild('Sign up', array('route' => 'fos_user_registration_register'));
             $menu->addChild('Sign in', array('route' => 'fos_user_security_login'));
             $menu->addChild('Reset password', array('route' => 'fos_user_resetting_request'));
-            $menu->addChild('Register', array('route' => 'fos_user_registration_register'));
         }
 
         $itemIterator = new RecursiveItemIterator($menu);
         $iterator = new \RecursiveIteratorIterator($itemIterator, \RecursiveIteratorIterator::SELF_FIRST);
 
-        $currentUri = $this->getRouter()->generate($request->get('_route'));
+        $currentUri = $request->getUri();
         
         foreach ($iterator as $item) {
             if ($item->getUri() == $currentUri) {

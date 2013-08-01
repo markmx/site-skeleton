@@ -1,0 +1,9 @@
+{% trans_default_domain 'FOSUserBundle' %}
+
+<form class="form-horizontal" action="{{ path('fos_user_resetting_reset', {'token': token}) }}" {{ form_enctype(form) }} method="POST" class="fos_user_resetting_reset">
+    <legend>New password</legend>
+    {{ form_widget(form, {'form_type': 'horizontal'}) }}
+    <div class="controls">
+        <input type="submit" value="{{ 'resetting.reset.submit'|trans }}" />
+    </div>
+</form>

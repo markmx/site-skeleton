@@ -1,10 +1,6 @@
-{% extends "MarkMxSkelBundle::layout.html.twig" %}
-
-{% block content %}
-<h1>Reset password</h1>
+{% extends "MarkMxUserBundle::layout.html.twig" %}
 
 {% block fos_user_content %}
-{% include "FOSUserBundle:Resetting:reset_content.html.twig" %}
+<h1>Reset password</h1>
+{% include "MarkMxUserBundle:Resetting:reset_content.html.twig" %}
 {% endblock fos_user_content %}
-
-{% endblock %}

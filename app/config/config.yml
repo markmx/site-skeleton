@@ -2,7 +2,6 @@ imports:
     - { resource: parameters.yml }
     - { resource: security.yml }
     - { resource: "@MarkMxSkelBundle/Resources/config/services.yml" }
-    - { resource: "@MarkMxUserBundle/Resources/config/services.yml" }
 
 framework:
     #esi:             ~
@@ -86,13 +85,8 @@ fos_user:
     firewall_name: main
     user_class: MarkMx\UserBundle\Entity\User
     registration:
-        form:
-            type: markmx_user_registration
         confirmation:
             enabled:    true
-    resetting:
-        form:
-            type: markmx_user_resetting
     from_email:
         address:        %reply_to_address%
         sender_name:    Site Skeleton Demo App

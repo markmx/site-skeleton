@@ -1,11 +1,11 @@
 {% extends "MarkMxSkelBundle::layout.html.twig" %}
 
-{% block title "Symfony - Demos" %}
+{% block title "Symfony Skeleton" %}
 
 {% block content_header '' %}
 
 {% block content %}
-    <h1 class="title">Welcome to the Site Skeleton</h1>
+    <h1 class="title">Welcome to the Symfony Skeleton</h1>
     {% if is_granted("ROLE_USER") %}
     <p>
         Hi {{ app.user.username }}.

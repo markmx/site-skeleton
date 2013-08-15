@@ -1,7 +1,7 @@
-Symfony Site Skeleton
-=====================
+Symfony Skeleton
+================
 
-A project offering an almost completely pre-configured working Symfony2 Web site, allowing you to focus
+A project offering a pre-configured working Symfony2 Web site, allowing you to focus
 immediately on developing your actual application.
 
 Includes:
@@ -11,7 +11,9 @@ Includes:
 * BcBootstrapBundle (Twitter Bootstrap/Jquery)
 * KnpMenuBundle
 
-View the Site Skeleton in action on my [free hosting account](http://site-skeleton.eu1.frbit.net) (thanks to [fortrabbit](http://fortrabbit.com/) for providing it).
+TODO: Add some coding value like admin functions or similar.
+
+View Symfony Skeleton in action on my [free hosting account](http://symfony-skeleton.eu1.frbit.net) (thanks to [fortrabbit](http://fortrabbit.com/) for providing it).
 
 
 Pre-requisites
@@ -26,7 +28,7 @@ Installation
 
         Example:
         $ cd /var/www (or wherever Apache's document root is on your system)
-        $ git clone git@github.com:markmx/site-skeleton.git foobar && cd foobar
+        $ git clone git@github.com:markmx/symfony-skeleton.git foobar && cd foobar
 
 2. Name the skeleton with your own PHP namespace and bundle name for the project.
 

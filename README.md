@@ -13,7 +13,7 @@ Includes:
 
 TODO: Add some coding value like admin functions or similar.
 
-View Symfony Skeleton in action on my [free hosting account](http://symfony-skeleton.eu1.frbit.net) (thanks to [fortrabbit](http://fortrabbit.com/) for providing it).
+View [Symfony Skeleton](http://symfony-skeleton.eu1.frbit.net) in action on my free hosting account (thanks to [fortrabbit](http://fortrabbit.com/)).
 
 
 Pre-requisites
@@ -23,6 +23,8 @@ LAMP stack with a suitably privileged MySQL user account and [Composer](http://g
 
 Installation
 ------------
+
+(last tested 15/08/2013)
 
 1. Clone this repository setting your project directory name and cd into it.
 

@@ -35,22 +35,38 @@ class LoadUserData extends ContainerAware implements FixtureInterface
         $user->setUsername('Adam')
              ->setEmail('adam@example.com')
              ->setPlainPassword('zaq1xsw2')
-             ->setEnabled(true)
-             ->setSuperAdmin(true);
+             ->setSuperAdmin(true)
+             ->setEnabled(true);
         $userManager->updateUser($user);
 
-        // Create standard users
+        // Create admins
         $user = $userManager->createUser();
         $user->setUsername('Barbara')
              ->setEmail('barbara@acme.com')
              ->setPlainPassword('1qaz2wsx')
+             ->setRoles(array('ROLE_ADMIN'))
              ->setEnabled(true);
         $userManager->updateUser($user);
 
+        // Create standard users
         $user = $userManager->createUser();
         $user->setUsername('Charlie')
              ->setEmail('charlie@example.org')
              ->setPlainPassword('xsw2zaq1')
+             ->setEnabled(true);
+        $userManager->updateUser($user);
+
+        $user = $userManager->createUser();
+        $user->setUsername('Delia')
+             ->setEmail('delia@example.org')
+             ->setPlainPassword('cde32wsx')
+             ->setEnabled(true);
+        $userManager->updateUser($user);
+
+        $user = $userManager->createUser();
+        $user->setUsername('Ernie')
+             ->setEmail('ernie@example.org')
+             ->setPlainPassword('cde31qaz')
              ->setEnabled(true);
         $userManager->updateUser($user);
     }

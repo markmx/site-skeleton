@@ -1,6 +1,4 @@
 <?php
-// src/Acme/MainBundle/Menu/MenuBuilder.php
-
 namespace MarkMx\SkelBundle\Menu;
 
 use Knp\Menu\FactoryInterface;
@@ -28,8 +26,13 @@ class MenuBuilder
             $accountMenu->addChild('View profile', array('route' => 'fos_user_profile_show'));
             $accountMenu->addChild('Edit profile', array('route' => 'fos_user_profile_edit'));
             $accountMenu->addChild('Change password', array('route' => 'fos_user_change_password'));
-            
-            $menu->addChild('Sign out', array('route' => 'fos_user_security_logout'));
+
+            if ($this->isGranted('ROLE_ADMIN')) {
+                $adminMenu = $menu->addChild('Admin');
+                $adminMenu->addChild('Users', array('route' => 'user_admin'));
+            }
+
+            $menu->addChild('Sign out ' . $this->getUsername(), array('route' => 'fos_user_security_logout'));
         } else {
             $menu->addChild('Sign up', array('route' => 'fos_user_registration_register'));
             $menu->addChild('Sign in', array('route' => 'fos_user_security_login'));
@@ -53,7 +56,17 @@ class MenuBuilder
 
     private function isLoggedIn()
     {
-            return $this->container->get('security.context')->isGranted('IS_AUTHENTICATED_FULLY');
+        return $this->container->get('security.context')->isGranted('IS_AUTHENTICATED_FULLY');
+    }
+
+    private function getUsername()
+    {
+        return $this->container->get('security.context')->getToken()->getUser();
+    }
+
+    private function isGranted($role)
+    {
+        return $this->container->get('security.context')->isGranted($role);
     }
 
     private function getRouter()

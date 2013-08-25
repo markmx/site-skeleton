@@ -1,0 +1,46 @@
+{% extends "MarkMxUserBundle::layout.html.twig" %}
+
+{% block content %}
+<h1>User admin</h1>
+
+<p>User administration</p>
+
+{{ form_start(form) }}
+    <div class="control-group error">
+    {{ form_errors(form) }}
+    {{ form_errors(form.foo_id) }}
+    </div>
+    <table class="table">
+        <tr>
+            <th></th>
+            <th>Username</th>
+            <th>Activated</th>
+            <th>Last login</th>
+        </tr>
+        {% for entity in user_entity_collection %}
+        <tr>
+            <td>
+                {{ form_widget(form.foo_id[entity.id]) }}
+            </td>
+            <td>
+                {{ entity.username }}
+            </td>
+            <td>
+                {% if entity.enabled %}
+                    <i class="icon-ok"></i>
+                {% else %}
+                    <i class="icon-remove"></i>
+                {% endif %}
+            </td>
+            <td>
+                {{ entity.lastLogin|date("d/m/Y") }}
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+    <div class="form-horizontal">
+        {{ form_widget(form.task) }}
+        <button type="submit" class="btn" >Apply</button>
+    </div>
+{{ form_end(form) }}
+{% endblock %}

@@ -7,11 +7,10 @@ immediately on developing your actual application.
 Includes:
 
 * Symfony2
-* FOSUserBundle
+* FOSUserBundle (plus user admin functionality added here)
 * BcBootstrapBundle (Twitter Bootstrap/Jquery)
 * KnpMenuBundle
 
-TODO: Add some coding value like admin functions or similar.
 
 View [Symfony Skeleton](http://symfony-skeleton.eu1.frbit.net) in action on my free hosting account (thanks to [fortrabbit](http://fortrabbit.com/)).
 
@@ -55,6 +54,7 @@ Installation
 
         $ php app/console doctrine:database:create
         $ php app/console doctrine:schema:update --force
+        $ php app/console doctrine:fixtures:load
 
 7. Remove Git and start afresh with your own Git repository.
 

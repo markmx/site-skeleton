@@ -5,6 +5,7 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolverInterface;
 use Symfony\Component\Validator\Constraints\Count;
+use MarkMx\UserBundle\Validator\Constraints\ContainsNonAdminUsers;
 
 class UserEntitySelectType extends AbstractType
 {
@@ -29,11 +30,14 @@ class UserEntitySelectType extends AbstractType
                     'property_path' => '[id]',
                     'multiple'      => true,
                     'expanded'      => true,
-                    'constraints'   => new Count(
+                    'constraints'   => array(
+                        new Count(
                             array(
                                 'min' => 1,
                                 'minMessage' => 'You must check at least one user account.'
                             )
+                        ),
+                        new ContainsNonAdminUsers(),
                     ),
                 )
             );

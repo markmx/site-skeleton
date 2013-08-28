@@ -4,7 +4,9 @@
     <legend>Existing account identity</legend>
     <div class="control-group">
         {% if invalid_username is defined %}
-            <p>{{ 'resetting.request.invalid_username'|trans({'%username%': invalid_username}) }}</p>
+            <div class="alert alert-error control-group error">
+                <p>{{ 'resetting.request.invalid_username'|trans({'%username%': invalid_username}) }}</p>
+            </div>
         {% endif %}
         <label class="control-label" for="username">{{ 'resetting.request.username'|trans }}</label>
         <div class="controls">

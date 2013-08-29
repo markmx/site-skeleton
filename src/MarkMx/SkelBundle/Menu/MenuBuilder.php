@@ -19,8 +19,6 @@ class MenuBuilder
     {
         $menu = $factory->createItem('root');
 
-        $menu->addChild('About', array('route' => 'about'));
-
         if ($this->isLoggedIn()) {
             $accountMenu = $menu->addChild('My account');
             $accountMenu->addChild('View profile', array('route' => 'fos_user_profile_show'));
@@ -38,6 +36,9 @@ class MenuBuilder
             $menu->addChild('Sign in', array('route' => 'fos_user_security_login'));
             $menu->addChild('Reset password', array('route' => 'fos_user_resetting_request'));
         }
+
+        $menu->addChild('Reset demo DB', array('route' => 'reset_db'));
+        $menu->addChild('About', array('route' => 'about'));
 
         $itemIterator = new RecursiveItemIterator($menu);
         $iterator = new \RecursiveIteratorIterator($itemIterator, \RecursiveIteratorIterator::SELF_FIRST);

@@ -1,0 +1,16 @@
+{% extends "MarkMxSkelBundle::layout.html.twig" %}
+
+{% block content %}
+<h1>Reset demo DB</h1>
+
+{{ form_start(form) }}
+    {{ form_errors(form) }}
+
+    {{ form_row(form.confirm) }}
+
+    <div>
+        <button type="submit" class="btn" >Reset DB</button>
+    </div>
+{{ form_end(form) }}
+
+{% endblock %}

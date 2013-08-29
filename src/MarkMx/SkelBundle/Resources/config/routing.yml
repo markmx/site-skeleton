@@ -2,6 +2,10 @@ homepage:
     pattern:  /
     defaults: { _controller: MarkMxSkelBundle:Default:index }
 
+reset_db:
+    pattern:  /reset-db
+    defaults: { _controller: MarkMxSkelBundle:Default:resetDb }
+
 about:
     pattern:  /about
     defaults: { _controller: MarkMxSkelBundle:Default:about }

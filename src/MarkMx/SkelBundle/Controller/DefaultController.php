@@ -4,41 +4,23 @@ namespace MarkMx\SkelBundle\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Request;
-
-// these import the "@Route" and "@Template" annotations
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
-
-use MarkMx\SkelBundle\Form\Type\ResetDbType;
-
 use Symfony\Bridge\Doctrine\DataFixtures\ContainerAwareLoader as DataFixturesLoader;
 use Doctrine\Common\DataFixtures\Purger\ORMPurger;
 use Doctrine\Common\DataFixtures\Executor\ORMExecutor;
+use MarkMx\SkelBundle\Form\Type\ResetDbType;
 
 class DefaultController extends Controller
 {
-    /**
-     * @Route("/", name="_default")
-     * @Template()
-     */
     public function indexAction()
     {
-        return array();
+        return $this->render('MarkMxSkelBundle:Default:index.html.twig');
     }
 
-    /**
-     * @Route("/about", name="about")
-     * @Template()
-     */
     public function aboutAction()
     {
-        return array();
+        return $this->render('MarkMxSkelBundle:Default:about.html.twig');
     }
 
-    /**
-     * @Route("/reset-db", name="reset_db")
-     * @Template()
-     */
     public function resetDbAction(Request $request)
     {
         $form = $this->createForm(new ResetDbType);
@@ -57,10 +39,6 @@ class DefaultController extends Controller
         );
     }
 
-    /**
-     * @Route("/email", name="_email")
-     * @Template()
-     */
     public function emailAction()
     {
         $name = $this->container->get('security.context')->getToken()->getUser();

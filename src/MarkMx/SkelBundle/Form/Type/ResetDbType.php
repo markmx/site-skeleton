@@ -11,7 +11,7 @@ class ResetDbType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder->add('confirm', 'checkbox', array(
-            'label'         => 'Confirm reset the demo DB to default fixtures losing all current data.',
+            'label'         => 'Confirm current DB data will be destroyed and replaced with fixtures data.',
             'required'      => true,
             'constraints'   => array(
                 new NotBlank(array(

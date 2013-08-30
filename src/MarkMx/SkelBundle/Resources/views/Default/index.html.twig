@@ -5,7 +5,7 @@
 {% block content_header '' %}
 
 {% block content %}
-    <h1 class="title">Welcome to the Symfony Skeleton</h1>
+    <h1 class="title">Welcome to Symfony Skeleton</h1>
     {% if is_granted("ROLE_USER") %}
     <p>
         Hi {{ app.user.username }}.
@@ -13,7 +13,11 @@
     {% endif %}
     {% if not is_granted("ROLE_USER") %}
     <p>
-        <a href="{{ path('fos_user_registration_register') }}">Sign up</a> for a new account, or <a href="{{ path('fos_user_security_login') }}">sign in</a> to an existing one.
+        This is a live demo. Click the <a href="{{ path('about') }}">About</a> page for more information, and then
+        <a href="{{ path('fos_user_registration_register') }}">sign&nbsp;up</a> for a new account, or <a href="{{ path('fos_user_security_login') }}">sign&nbsp;in</a> to an existing one.
+    </p>
+    <p>
+        If you have any problems, try <a href="{{ path('reset_db') }}">resetting the demo database</a> to its default state.
     </p>
     {% endif %}
 {% endblock %}

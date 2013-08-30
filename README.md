@@ -14,6 +14,8 @@ Includes:
 
 View [Symfony Skeleton](http://symfony-skeleton.eu1.frbit.net) in action on my free hosting account (thanks to [fortrabbit](http://fortrabbit.com/)).
 
+Note. To access the Admin page, login as an administrator using the credentials in the [LoadUserData](/src/MarkMx/UserBundle/DataFixtures/ORM/LoadUserData.php) fixtures class.
+
 
 Pre-requisites
 --------------

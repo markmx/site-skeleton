@@ -1,4 +1,5 @@
 <?php
+
 namespace MarkMx\UserBundle\Validator\Constraints;
 
 use Symfony\Component\Validator\Constraint;

@@ -6,7 +6,6 @@ use Doctrine\Common\DataFixtures\FixtureInterface;
 use Doctrine\Common\Persistence\ObjectManager;
 use Symfony\Component\DependencyInjection\ContainerAware;
 use Symfony\Component\DependencyInjection\ContainerInterface;
-use MarkMx\UserBundle\Entity\User;
 
 class LoadUserData extends ContainerAware implements FixtureInterface
 {

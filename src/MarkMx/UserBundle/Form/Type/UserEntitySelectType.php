@@ -1,4 +1,5 @@
 <?php
+
 namespace MarkMx\UserBundle\Form\Type;
 
 use Symfony\Component\Form\AbstractType;

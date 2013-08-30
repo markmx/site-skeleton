@@ -1,4 +1,5 @@
 <?php
+
 namespace MarkMx\SkelBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;

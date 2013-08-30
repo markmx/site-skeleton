@@ -1,4 +1,5 @@
 <?php
+
 namespace MarkMx\UserBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
@@ -48,6 +49,7 @@ class UserAdminController extends Controller
             $user->setEnabled(true);
             $em->persist($user);
         }
+
         $em->flush();
     }
 }

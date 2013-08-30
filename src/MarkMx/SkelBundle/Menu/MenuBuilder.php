@@ -1,4 +1,5 @@
 <?php
+
 namespace MarkMx\SkelBundle\Menu;
 
 use Knp\Menu\FactoryInterface;

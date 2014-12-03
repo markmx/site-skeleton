@@ -11,6 +11,10 @@ vendor/*
 web/uploads/*
 web/bundles/*
 web/.htaccess
+web/error_log
+src/MarkMx/SkelBundle/Resources/public
+# Exclude default symfony tests until we create some for this bundle
+src/MarkMx/SkelBundle/Tests/*
 
 # Configuration files
 app/config/parameters.ini
